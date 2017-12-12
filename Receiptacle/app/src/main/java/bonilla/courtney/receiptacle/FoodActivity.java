@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class FoodActivity extends AppCompatActivity {
 
-    private static final int CAMERA_REQUEST = 1888;
+    private static final int GALLERY_REQUEST = 1888;
 
     ImageView image;
     Button button;
@@ -29,14 +29,15 @@ public class FoodActivity extends AppCompatActivity {
 
 
             public void takeImageFromCamera(View view) {
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, CAMERA_REQUEST);
+                Intent cameraIntent = new Intent(Intent.ACTION_PICK);
+                cameraIntent.setType("image/*");
+                startActivityForResult(cameraIntent, GALLERY_REQUEST);
             }
 
             protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-                if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
-                    Bitmap mphoto = (Bitmap) data.getExtras().get("data");
-                    image.setImageBitmap(mphoto);
+                if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK) {
+                    Bitmap photo = (Bitmap) data.getExtras().get("data");
+                    image.setImageBitmap(photo);
                 }
             }
 
