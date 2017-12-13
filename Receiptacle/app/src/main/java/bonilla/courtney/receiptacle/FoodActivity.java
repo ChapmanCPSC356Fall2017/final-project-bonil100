@@ -11,8 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.graphics.BitmapFactory;
+import android.database.Cursor;
 
-public class FoodActivity extends AppCompatActivity {
+import java.io.IOException;
+
+public class FoodActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final int GALLERY_REQUEST = 1888;
 
@@ -27,29 +31,46 @@ public class FoodActivity extends AppCompatActivity {
 
         image = (ImageView) this.findViewById(R.id.image_from_camera);
         button = (Button) this.findViewById(R.id.take_image_from_camera);
+
+        button.setOnClickListener(this);
     }
 
 
-    public void takeImageFromCamera(View view) {
-        Intent cameraIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        //cameraIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-        cameraIntent.setType("image/*");
-        startActivityForResult(cameraIntent, GALLERY_REQUEST);
+    public void onClick(View view) {
+
+        Intent intent = new Intent();
+
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), GALLERY_REQUEST);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK) {
-            final Bundle extras = data.getExtras();
-            if (extras != null) {
-                Bitmap photo = extras.getParcelable("data");
-                image.setImageBitmap(photo);
+        super.onActivityResult(requestCode,resultCode,data);
+
+        if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK && data!= null && data.getData() != null) {
+            Uri uri =data.getData();
+
+            try{
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+
+                ImageView image = (ImageView) findViewById(R.id.image_from_camera);
+                image.setImageBitmap(bitmap);
             }
-            //Bitmap photo = (Bitmap) data.getExtras().get("data");
-            //image.setImageBitmap(photo);
+
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
+
 
 
         }
 
-    }
+
+
+        }
+
 }
+
