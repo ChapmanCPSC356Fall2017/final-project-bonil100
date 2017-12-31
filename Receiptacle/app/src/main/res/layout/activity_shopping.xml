@@ -4,15 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bonilla.courtney.receiptacle.ShoppingActivity">
+    tools:context="bonilla.courtney.receiptacle.FoodActivity">
 
-    <TextView
-        android:id="@+id/textView1"
+
+    <Button
+        android:id="@+id/take_image_from_camera"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="GET RECEIPT"/>
+
+    <ImageView
+        android:id="@+id/image_from_camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="THIS IS SHOPPING ACTIVITY"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/take_image_from_camera"
+        android:layout_marginTop="12dp" />
+
 
 </RelativeLayout>

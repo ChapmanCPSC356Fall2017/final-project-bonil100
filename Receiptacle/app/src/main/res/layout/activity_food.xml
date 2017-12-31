@@ -7,24 +7,24 @@
     tools:context="bonilla.courtney.receiptacle.FoodActivity">
 
 
-        <Button
-            android:id="@+id/take_image_from_camera"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:text="GET RECEIPT"/>
+    <Button
+        android:id="@+id/take_image_from_camera"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="GET RECEIPT"/>
 
-        <ImageView
-            android:id="@+id/image_from_camera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/take_image_from_camera"
-            android:layout_marginTop="12dp" />
+    <ImageView
+        android:id="@+id/image_from_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/take_image_from_camera"
+        android:layout_marginTop="12dp" />
 
 
 </RelativeLayout>

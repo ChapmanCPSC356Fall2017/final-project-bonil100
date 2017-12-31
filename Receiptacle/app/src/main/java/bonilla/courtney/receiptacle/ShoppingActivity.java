@@ -73,4 +73,3 @@ public class ShoppingActivity extends AppCompatActivity implements View.OnClickL
     }
 
 }
-

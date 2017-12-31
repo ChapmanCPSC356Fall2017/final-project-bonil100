@@ -73,4 +73,3 @@ public class GasActivity extends AppCompatActivity implements View.OnClickListen
     }
 
 }
-

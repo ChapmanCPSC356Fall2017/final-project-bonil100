@@ -74,4 +74,3 @@ public class OtherActivity extends AppCompatActivity implements View.OnClickList
 
 }
 
-
