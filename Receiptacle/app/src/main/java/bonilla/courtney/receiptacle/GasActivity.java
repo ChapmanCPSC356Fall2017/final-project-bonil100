@@ -36,6 +36,7 @@ public class GasActivity extends AppCompatActivity implements View.OnClickListen
     }
 
 
+    //click button get receipt picture
     public void onClick(View view) {
 
         Intent intent = new Intent();
@@ -45,6 +46,7 @@ public class GasActivity extends AppCompatActivity implements View.OnClickListen
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), GALLERY_REQUEST);
     }
 
+    //check code matches galleryrequest, display image
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode,data);

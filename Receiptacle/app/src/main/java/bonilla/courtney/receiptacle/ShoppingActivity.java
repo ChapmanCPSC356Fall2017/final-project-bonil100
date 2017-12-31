@@ -35,7 +35,7 @@ public class ShoppingActivity extends AppCompatActivity implements View.OnClickL
         button.setOnClickListener(this);
     }
 
-
+//click button get pictures
     public void onClick(View view) {
 
         Intent intent = new Intent();
@@ -45,6 +45,7 @@ public class ShoppingActivity extends AppCompatActivity implements View.OnClickL
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), GALLERY_REQUEST);
     }
 
+    //check code matches galleryrequest, display image
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode,data);

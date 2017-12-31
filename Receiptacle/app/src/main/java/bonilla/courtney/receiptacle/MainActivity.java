@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
             }
         });
 
+        //spinner values
         ENTER.setOnClickListener(new View.OnClickListener() {
 
             @Override

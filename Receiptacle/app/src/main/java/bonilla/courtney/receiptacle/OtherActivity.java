@@ -45,6 +45,7 @@ public class OtherActivity extends AppCompatActivity implements View.OnClickList
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), GALLERY_REQUEST);
     }
 
+    //check code matches galleryrequest, display image
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode,data);
